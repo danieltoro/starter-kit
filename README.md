@@ -1,4 +1,4 @@
-# Starter Kit - Node Express React & Redux
+# MERN - Starter kit
 
 One Paragraph of project description goes here
 
