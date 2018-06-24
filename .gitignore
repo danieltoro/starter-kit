@@ -28,4 +28,4 @@ public/app/report.html
 package-lockdatabase.json
 yarn.lock
 package-lock.json
-.idea/*
+.idea/
