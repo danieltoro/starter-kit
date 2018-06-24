@@ -4,7 +4,18 @@
   "description": "df",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist/ && rimraf public/app",
+    "lint": "eslint src",
+    "postmerge": "npm install",
+    "postrewrite": "npm install",
+    "precommit": "npm run lint",
+    "prepush": "npm run test",
+    "start": "npm run clean & NODE_ENV=development BABEL_ENV=development babel-node src/server/index.js",
+    "start:analyzer": "npm run clean && NODE_ENV=development BABEL_ENV=development ANALYZER=true babel-node src/server/index.js",
+    "start:production": "npm run build & NODE_ENV=development BABEL_ENV=development babel-node src/server/index.js",
+    "start:dev": "NODE_ENV=development nodemon --exec babel-node src/server/index.js",
+    "watch:client": "webpack --watch --config webpack/webpack.config.client.js",
+    "watch:server": "webpack --watch --config webpack/webpack.config.server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +31,23 @@
   "bugs": {
     "url": "https://github.com/danieltoro/starter-kit/issues"
   },
-  "homepage": "https://github.com/danieltoro/starter-kit#readme"
+  "homepage": "https://github.com/danieltoro/starter-kit#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "express": "^4.16.3",
+    "open": "0.0.5",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "husky": "^0.14.3",
+    "nodemon": "^1.17.5"
+  }
 }

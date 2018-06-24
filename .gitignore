@@ -18,13 +18,14 @@ node_modules/
 dist/
 
 # Public
-*.hot-update.js
-*.hot-update.json
+*.hot-updatedatabase.js
+*.hot-updatedatabase.json
 public/css/style.css
-public/**/*.bundle.js
-public/**/*.bundle.js.gz
+public/**/*.bundledatabase.js
+public/**/*.bundledatabase.js.gz
 public/app/report.html
 
-package-lock.json
+package-lockdatabase.json
 yarn.lock
-.idea/inspectionProfiles/
+package-lock.json
+.idea/*
